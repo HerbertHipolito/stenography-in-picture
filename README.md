@@ -7,6 +7,7 @@ To run the code you need the follwing dependencies:
 PIL, numpy:
 
 python3 -m pip install --upgrade Pillow
+
 pip install numpy
 
 How to use:
