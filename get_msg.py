@@ -44,4 +44,4 @@ class get_msg:
 
         return string
 
-get_msg('msghiden.png',show=False)
+#get_msg('msghiden.png',show=False)

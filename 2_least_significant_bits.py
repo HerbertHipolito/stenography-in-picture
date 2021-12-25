@@ -32,6 +32,7 @@ class least_significant:
         return msg
 
     def ConvertStringToBinary(self,msg):
+    #Add the character '#' at the end of the message and convert it to binary.
         for iterator in range(len(msg)):
             letterAscii=ord(msg[iterator])
             msg[iterator]=np.binary_repr(letterAscii,width=8)
@@ -41,7 +42,7 @@ class least_significant:
         return msg
 
     def modifyPictureToBinary(self,pixelMod,pixelOri,sizeImagem,qtdLoop):
-    
+    #Get all RGB numbers of the image and convert them to binary.
         binaryPixel=[]
     
         for i in range(sizeImagem[0]):
@@ -51,7 +52,7 @@ class least_significant:
         return binaryPixel
 
     def modifying(self,binaryMatrix,original,msg,sizeImagem,im,qtdLetter):
-
+    # Replace the last 2 bits from each binary RGB number with the bits of the message to be hidden. 
         original=im.load()
         [count,modifiedPixels,binaryMsg,modificada,resto]=[0,[],'',[],len(msg)%3]
     
@@ -84,4 +85,4 @@ class least_significant:
                 original[positionI,positionJ]=(int(modifiedPixels[count],2),int(modifiedPixels[count+1],2),original[positionI,positionJ][2])
         return original
 
-least_significant('rosto.png','msghiden.png',show=True)
+#least_significant('face.png','msghiden.png',show=True)
